@@ -4,8 +4,9 @@ import { detectInAppBrowser } from "./util";
 import InApp from "detect-inapp";
 
 function App() {
-  const userAgent = navigator.userAgent;
-  const { isInApp, isMobile, isDesktop, browser } = useDetectInApp(userAgent);
+  const { isInApp, isMobile, isDesktop, browser } = useDetectInApp(
+    navigator.userAgent || navigator.vendor
+  );
   const inapp = new InApp(navigator.userAgent || navigator.vendor);
 
   return (
@@ -14,7 +15,10 @@ function App() {
       <div>isMobile : {isMobile ? "true" : "false"}</div>
       <div>isDesktop : {isDesktop ? "true" : "false"}</div>
       <div>browser : {browser}</div>
-      <div>detectInAppBrowser: {detectInAppBrowser(navigator.userAgent)}</div>
+      <div>
+        detectInAppBrowser:{" "}
+        {detectInAppBrowser(navigator.userAgent || navigator.vendor)}
+      </div>
       <br />
       <div>isInApp : {inapp.isInApp ? "true" : "false"}</div>
       <div>isMobile : {inapp.isMobile ? "true" : "false"}</div>
