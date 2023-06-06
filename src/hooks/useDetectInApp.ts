@@ -48,6 +48,8 @@ const useDetectInApp = (userAgent: string): Inapp => {
   };
 
   const isMobile = (): boolean => {
+    console.log("isMobile", /(iPad|iPhone|Android|Mobile)/i.test(useragent));
+
     return /(iPad|iPhone|Android|Mobile)/i.test(useragent) || false;
   };
 

@@ -1,4 +1,5 @@
 import useDetectInApp from "./hooks/useDetectInApp";
+import { detectInAppBrowser } from "./util";
 
 function App() {
   const userAgent = navigator.userAgent;
@@ -10,6 +11,7 @@ function App() {
       <div>isMobile : {isMobile ? "true" : "false"}</div>
       <div>isDesktop : {isDesktop ? "true" : "false"}</div>
       <div>browser : {browser}</div>
+      <div>detectInAppBrowser: {detectInAppBrowser(navigator.userAgent)}</div>
     </>
   );
 }
