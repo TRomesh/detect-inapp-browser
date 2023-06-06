@@ -6,9 +6,7 @@ import InApp from "detect-inapp";
 function App() {
   const userAgent = navigator.userAgent;
   const { isInApp, isMobile, isDesktop, browser } = useDetectInApp(userAgent);
-  const inapp = new InApp(
-    navigator.userAgent || navigator.vendor || window.opera
-  );
+  const inapp = new InApp(navigator.userAgent || navigator.vendor);
 
   return (
     <>
